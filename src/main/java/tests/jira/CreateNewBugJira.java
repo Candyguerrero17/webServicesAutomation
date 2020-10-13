@@ -8,7 +8,13 @@ import webServices.WebServiceJira;
 
 public class CreateNewBugJira extends WebServiceJira{
 	private CreateBugJira bodyBug = new CreateBugJira();
-	@Test()
+	/**
+	 * Create new bug in jira
+	 * 
+	 * @author AnyOne
+	 * 
+	 */
+	@Test(priority = 4)
 	public void createNewBug() throws InterruptedException {
 		int statusCode = requestPostWithtAuthorization(bodyBug.setInfoBodyJira()).getStatusCode();
 		Assert.assertEquals(statusCode, 201);

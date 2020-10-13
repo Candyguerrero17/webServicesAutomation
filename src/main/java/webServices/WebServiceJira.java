@@ -9,11 +9,21 @@ import static utils.constans.Enpoints.ISSUE;
 import static utils.constans.Token.TOKEN;
 
 import static utils.constans.Urls.BASE_URI_JIRA;
-
+/**
+ * Description: Basic methods with Jira
+ *
+ */
 public class WebServiceJira extends BaseWebServices {
 
 	private static final int NUM = 10030;
 
+	/**
+	 * The method does a post with header Authorization and token
+	 * 
+	 * @return request
+	 * 
+	 * 
+	 */
 	public Response requestPostWithtAuthorization(BugJira bodyBug) {
 
 		return request.given().header("Authorization", "Basic " + TOKEN.getText()).contentType(ContentType.JSON)
@@ -21,8 +31,14 @@ public class WebServiceJira extends BaseWebServices {
 				.post(BASE_URI_JIRA.getText() + ISSUE.getText());
 
 	}
-
-	public int requestGetSizeJson(String endpoint, String value) {
+	/**
+	 * The method does a get total of register
+	 * 
+	 * @return request
+	 * 
+	 * 
+	 */
+	public int requestValueofRegister(String endpoint, String value) {
 		response = request.given().header("Authorization", "Basic " + TOKEN.getText()).contentType(ContentType.JSON)
 				.when().when().get(BASE_URI_JIRA.getText() + endpoint);
 		JsonPath jsonPathEvaluator = response.jsonPath();
@@ -30,15 +46,27 @@ public class WebServiceJira extends BaseWebServices {
 		return total + NUM;
 
 	}
-
+	/**
+	 * The method does a get specific id
+	 * 
+	 * @return response
+	 * 
+	 * 
+	 */
 	public Response requestGet(String endpoint, int id) {
 		
 		
-		return response = request.given().header("Authorization", "Basic " + TOKEN.getText())
+		return  request.given().header("Authorization", "Basic " + TOKEN.getText())
 				.contentType(ContentType.JSON).when().get(BASE_URI_JIRA.getText() + endpoint + id);
 
 	}
-
+	/**
+	 * The method loads body
+	 * 
+	 * @return a string woth info
+	 * 
+	 * 
+	 */
 	public String body(String key, String summay, String description, String name) {
 
 		String body = "{\r\n" + "   \"fields\":{\r\n" + "      \"project\":{\r\n" + "         \"key\":\"" + key

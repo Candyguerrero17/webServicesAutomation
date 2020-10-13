@@ -8,9 +8,17 @@ import static utils.constans.Messages.DUPLICATE_OK;
 import webServices.BaseWebServices;
 
 public class PostDuplicateEmail extends BaseWebServices {
-	@Test()
+	/**
+	 * Before to send post , it has a questios if email exits no allow to send. 
+	 * 
+	 * @author AnyOne
+	 * 
+	 */
+	@Test(priority = 3)
 	public void mailAlreadyExists() {
-		String message = requestPostWithDataDuplicate(1,EMAIL.getText());
+		
+		String newEmail = requestGetWithInfoMethod(1, EMAIL.getText());
+		String message = requestPostWithDataDuplicate(newEmail);
 		Assert.assertEquals(message, DUPLICATE_OK.getText());
 	}
 }

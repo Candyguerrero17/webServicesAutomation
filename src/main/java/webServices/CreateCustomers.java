@@ -10,12 +10,21 @@ import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import pojos.Customer;
 import static utils.constans.Enpoints.CUSTOMER;
-
+/**
+ * Description: create info to customers
+ *
+ */
 public class CreateCustomers extends BaseWebServices {
 	private Customer cust[] = new Customer[20];
 	private Faker data = new Faker();
 
-
+	/**
+	 * The method creates 20 register with pjo
+	 * 
+	 * @return a object with info
+	 * 
+	 * 
+	 */
 	public Object[] addCustomersPojo() throws IllegalArgumentException, IllegalAccessException {
 
 		for (int i = 0; i < 20; i++) {
@@ -25,7 +34,13 @@ public class CreateCustomers extends BaseWebServices {
 		return cust;
 
 	}
-
+	/**
+	 * The method deletes emails dupilicats and replace.
+	 * 
+	 * @return a object with info with emails duplicates
+	 * 
+	 * 
+	 */
 	public Object[] replaceDuplicateEmails() throws IllegalArgumentException, IllegalAccessException {
 
 		Object[] custor = addCustomersPojo();
@@ -47,7 +62,13 @@ public class CreateCustomers extends BaseWebServices {
 		return custor;
 
 	}
-
+	/**
+	 * The method sends info to create a customers
+	 * 
+	 * @return a object with info with emails duplicates
+	 * 
+	 * 
+	 */
 	public Response createDataPojoWebService() throws IllegalArgumentException, IllegalAccessException {
 
 		Object[] custor = replaceDuplicateEmails();

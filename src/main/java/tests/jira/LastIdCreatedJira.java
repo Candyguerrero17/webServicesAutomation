@@ -11,11 +11,17 @@ import webServices.CreateBugJira;
 import webServices.WebServiceJira;
 
 public class LastIdCreatedJira extends WebServiceJira{
-	
+
 	private CreateBugJira dataBug = new CreateBugJira();
-	@Test()
+	/**
+	 * Create new bug in jira and validate that it is the last id.
+	 * 
+	 * @author AnyOne
+	 * 
+	 */
+	@Test(priority = 5)
 	public void createNewBugJira() throws InterruptedException {
-		int idtotals = requestGetSizeJson(SEARCH.getText(),TOTAL.getText());
+		int idtotals = requestValueofRegister(SEARCH.getText(),TOTAL.getText());
 		requestPostWithtAuthorization(dataBug.setInfoBodyJira());
 		int statusCode = requestGet(ISSUE.getText(),idtotals-1).getStatusCode();
 		Assert.assertEquals(statusCode, 200);

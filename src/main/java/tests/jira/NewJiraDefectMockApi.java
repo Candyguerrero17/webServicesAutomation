@@ -11,8 +11,13 @@ import webServices.WebServiceJira;
 
 public class NewJiraDefectMockApi extends WebServiceJira {
 	CreateBugJira bodyBug = new CreateBugJira();
-
-	@Test()
+	/**
+	 * Create and sent post with info of MockApi
+	 * 
+	 * @author AnyOne
+	 * 
+	 */
+	@Test(priority = 6)
 	public void newBugWithMockeApi() {
 		String description = requestGetWithInfoMethod(1, NAME.getText());
 		String summary = requestGetWithInfoMethod(1, TRANSACTION.getText());
