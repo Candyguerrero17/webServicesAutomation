@@ -1,5 +1,10 @@
 package utils.constans;
-
+/**
+ * Enumm of constans parameters
+ * 
+ * @author 
+ *
+ */
 public enum Parameters {
 
 	TOTAL("total"),

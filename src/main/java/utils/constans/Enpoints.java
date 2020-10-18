@@ -1,5 +1,10 @@
 package utils.constans;
-
+/**
+ * Enumm of constans endpoint
+ * 
+ * @author 
+ *
+ */
 public enum Enpoints {
 
 	CUSTOMER("customer"),

@@ -1,5 +1,10 @@
 package utils.constans;
-
+/**
+ * Enumm of constans token
+ * 
+ * @author 
+ *
+ */
 public enum Token {
 
 	TOKEN("Y2FuZHlndWVtZUBob3RtYWlsLmNvbTp2Mzg3cm1RVUN3MU9COHZlemp6ZzMwOTU=");

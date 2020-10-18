@@ -1,11 +1,13 @@
 package pojos;
 
-import com.github.javafaker.Faker;
 import com.github.javafaker.Name;
-
+/**
+ * Class get and set to Customer.
+ * 
+ * @author 
+ *
+ */
 public class Customer {
-
-	Faker data = new Faker();
 
 	public String name;
 	public String lastName;
@@ -17,17 +19,20 @@ public class Customer {
 	public String country;
 	public int telephone;
 
-	public Customer() {
-		this.name = data.name().firstName();
-		this.lastName = data.name().lastName();
-		this.accountNumber = data.number().randomDigit();
-		this.amount = "Abril";
-		this.transactionType = "Saving";
-		this.email = data.internet().emailAddress();
-		this.active = true;
-		this.country= data.address().country();
-		this.telephone= data.number().randomDigit();
+	public Customer(String name,String lastName, int accountNumber,String amount, String transactionType, String email,
+			boolean active,String country,int telephone) {
+		this.name = name;
+		this.lastName = lastName;
+		this.accountNumber = accountNumber;
+		this.amount = amount;
+		this.transactionType = transactionType;
+		this.email = email;
+		this.active = active;
+		this.country= country;
+		this.telephone= telephone;
+		
 	}
+
 
 
 

@@ -1,5 +1,10 @@
 package utils.constans;
-
+/**
+ * Enumm of constans ruls
+ * 
+ * @author 
+ *
+ */
 public enum Urls {
 
 	BASE_URI_MOCK("https://5f830d736b97440016f4e29b.mockapi.io/api/v1/"),

@@ -26,10 +26,9 @@ public class CreateCustomers extends BaseWebServices {
 	 * 
 	 */
 	public Object[] addCustomersPojo() throws IllegalArgumentException, IllegalAccessException {
-
-		for (int i = 0; i < 20; i++) {
-
-			cust[i] = new Customer();
+			for (int i = 0; i < 20; i++) {
+			cust[i] = new Customer(data.name().firstName(),data.name().lastName(),data.number().randomDigit()
+					,"Abril", "Saving",data.internet().emailAddress(),true,data.address().country(),data.number().randomDigit());
 		}
 		return cust;
 

@@ -1,5 +1,10 @@
 package utils.constans;
-
+/**
+ * Enumm of constans messages ok
+ * 
+ * @author 
+ *
+ */
 public enum Messages {
 
 	DUPLICATE("Start validation of emails"),

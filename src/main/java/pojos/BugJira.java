@@ -1,5 +1,10 @@
 package pojos;
-
+/**
+ * Class get and set to test.
+ * 
+ * @author 
+ *
+ */
 public class BugJira {
 	private String key;
 	private String summary;
